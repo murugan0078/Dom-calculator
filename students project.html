@@ -1,0 +1,210 @@
+
+                        
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employees Details</Details></title>
+    <STYLE>
+        div{
+            text-align: center;
+            padding: 4px;
+            margin-top: 40px;
+            font-style: normal;
+            font-weight: 100;
+        }
+        h1{
+            color:orange ;
+            outline: 1px;
+            font-style: oblique;
+        }
+        table {
+         text-align: center;
+         width: 100%;
+         border-collapse: collapse;
+      }
+      th, td {
+
+         border: 1px solid black;
+         padding: 8px;
+}
+
+thead tr{
+    background-color: black;
+    color:orange;
+}
+
+#BUTTON button{
+    color:black;
+    background-color: white;
+    border:1px solid black;
+    padding:10px;
+    transition: all 0.5s linear;
+}
+
+#BUTTON button:hover{
+    color:orange;
+    background-color: black;
+
+}
+
+tbody tr:hover{
+    cursor:pointer;
+    background-color: gray;
+    color:orange;
+
+}
+    </STYLE>
+</head>
+<body>
+
+    <div id="BUTTON">
+    <h1>Students Record</h1>
+    <button id="total">Total Students</button>
+    <button id="Male">Male-Students</button>
+    <button id="Female">Female-Students</button>
+    </div>
+    
+    <table>
+        <thead>
+        <tr>
+        <th>S No</th>
+        <th>Student Name</th>
+        <th></th>
+        <th>Gender</th>
+        <th>Department</th>
+        </tr>
+
+    </thead>
+    <tbody id="body">
+       
+    </tbody>
+    </table>
+    <script>
+        let students =[{
+            Sno:01,
+            Name:"Bhogeshwar rao",
+            Id:14301,
+            Gender:"Male",
+            Department:"CSC",
+        },
+        {
+            Sno:02,
+            Name:"Maheshwar rao",
+            Id:14302,
+            Gender:"Male",
+            Department:"ECE",
+        },{
+            Sno:03, 
+            Name:"Kameshwar rao",
+            Id:14303,
+            Gender:"Male",
+            Department:"MECH",
+        },{
+            Sno:04,
+            Name:"Rama Devi",
+            Id:14304,
+            Gender:"Female",
+            Department:"CIVIL",
+        },{
+            Sno:05,
+            Name:"Rajini Usha",
+            Id:14305,
+            Gender:"Female",
+            Department:"AERO",
+        },{
+            Sno:06,
+            Name:"sunil Naik",
+            Id:14306,
+            Gender:"Male",
+            Department:"EEE",
+        },{
+            Sno:07,
+            Name:"Mahidhar sanu",
+            Id:14307,
+            Gender:"Male",
+            Department:"BIO-TECH",
+        },{
+            Sno:08,
+            Name:"Soumya Singh",
+            Id:14308,
+            Gender:"Female",
+            Department:"AGRI",
+        },{
+            Sno:09,
+            Name:"Prasanthi Rao",
+            Id:14309,
+            Gender:"Female",
+            Department:"IT",
+        },{
+            Sno:10,
+            Name:"Roja Das",
+            Id:14310,
+            Gender:"Female",
+            Department:"MARINE",   
+        },
+    ]
+   
+    bodyTag=document.querySelector("#body")
+    buttonTag=document.querySelector("#total")
+    buttonTag. addEventListener("click",()=>{
+        let stu="<tr>"
+
+      students.map((items)=>{
+    //  console.log(item);
+     for( let key in items){
+    //    console.log(item[key])
+    stu+=`<td>${items[key]}</td>`
+     }
+
+      stu+="</tr>"
+
+      bodyTag.innerHTML = stu
+
+    })})
+  
+
+    MaleTag=document.querySelector("#Male")
+    MaleTag. addEventListener("click",()=>
+    {
+        let male="<tr>";
+            students.filter((item)=>{
+                if (item.Gender == "Male") {
+                    for (let key in item) {
+                        //    console.log(item[key])
+                        male += `<td>${item[key]}</td>`
+                    }
+
+                    male += "</tr>"
+
+      bodyTag.innerHTML = male
+
+                }
+            })
+    })
+
+    FemaleTag=document.querySelector("#Female")
+    FemaleTag . addEventListener("click",()=>
+    {
+        let female="<tr>";
+            students.filter((item)=>{
+                if (item.Gender == "Female") {
+                    for (let key in item) {
+                        //    console.log(item[key])
+                        female += `<td>${item[key]}</td>`
+                    }
+
+                    female += "</tr>"
+
+      bodyTag.innerHTML = female
+
+                }
+            })
+    })
+
+   
+    </script>
+</body>
+</html>

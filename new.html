@@ -1,0 +1,38 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to do list </title>
+</head>
+<body>
+    <h1>to do list</h1>
+    <div class="container">
+        <input type="text" name="" id="inputField"><button id="addbtn">+</button></input>
+        <div id="toDoContainer">
+
+        </div>
+    </div>
+    <script>
+        let addToDoButton = document.getElementById("addbtn");
+        let inputField = document.getElementById("inputField");
+        let paragraph = document.getElementById("toDoContainer");
+        addToDoButton.addEventListener("click",() =>{
+            let para = document.createElement("p");
+            paragraph.appendChild(para);
+            para.innerHTML = inputField.value
+            inputField.value= "";
+            para.addEventListener("click",()=>{
+                para.style.textDecoration ="line-through"
+            })
+            para.addEventListener("dblclick",()=>{
+                paragraph.removeChild(para)
+            })
+            
+
+        })
+    </script>
+    
+</body>
+</html> -->

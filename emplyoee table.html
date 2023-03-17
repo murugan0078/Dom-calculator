@@ -1,0 +1,93 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding: 0px;
+        }
+        body{
+            background-color: blanchedalmond;
+            text-align: center;
+        }
+        #input{
+            margin-top: 6px;
+        }
+        #inputsecond{
+            margin-top: 25px;
+        }
+        #btn{
+            margin-top: 6px;
+           border-radius: 5px;
+        }
+        table{
+            border-collapse: collapse;
+            width: 50%;
+            margin: 50px auto;
+            background-color: burlywood;
+        }
+        table,tr,th,td{
+            border: 2px solid black;
+            padding: 5px;
+        }
+      
+    </style>
+</head>
+<body>
+       <div id="container">
+        <div id="inputsecond">NAME: <input type="text" id="name"></div>
+        <div id="input">AGE: <input type="text" id="age"></div>
+        <div id="input">COURSE: <input type="text" id="course"></div>
+        <div id="input">GRADE: <input type="text" id="grade"></div>
+        <div id="btn"><button id="entry">Entry</button></div>
+       </div><br>
+       <table id="display">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Course</th>
+            <th>Grade</th>
+        </tr>
+       </table>
+       <script>
+        let entry=document.querySelector("#entry");
+        let row=1;
+        entry.addEventListener("click",()=>{
+            let name = document.querySelector("#name").value;
+            let age = document.querySelector("#age").value;
+            let course = document.querySelector("#course").value
+            let grade = document.querySelector("#grade").value;
+            if(!name || !age || !grade || !course){
+                alert("fill all the input");
+                return;
+            }
+            let display = document.querySelector("#display")
+            let newRow = display.insertRow(row);
+            let cell = newRow.insertCell(0);
+            let cell2 = newRow.insertCell(1);
+            let cell3 = newRow.insertCell(2);
+            let cell4 = newRow.insertCell(3);
+
+            cell.innerHTML = name;
+            cell2.innerHTML = age;
+            cell3.innerHTML = course;
+            cell4.innerHTML = grade;
+            name ="";
+            age ="";
+            grade="";
+            row++;
+
+
+        
+        })
+        
+        
+
+       </script>
+    
+</body>
+</html> -->

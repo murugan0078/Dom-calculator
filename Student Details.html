@@ -1,0 +1,289 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Details</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+        }
+        div{
+            text-align: center;
+            padding: 4px;
+            margin-top: 40px;
+            font-style: normal;
+            font-weight: 100;
+        }
+        #headline{
+            color: blue;
+        }
+        #mern{
+            background-color:silver;
+            border: 2px solid black;
+            border-radius: 10px;
+
+        }
+        #mern:hover{
+            background-color:rgb(182, 45, 201);
+            border: 2px solid black;
+            border-radius: 10px;
+
+        }
+        #java{
+            background-color:silver;
+            border: 2px solid black;
+            border-radius: 10px;
+
+        }
+        #java:hover{
+            background-color:rgb(182, 45, 201);
+            border: 2px solid black;
+            border-radius: 10px;
+
+        }
+        #phython{
+            background-color:silver;
+            border: 2px solid black;
+            border-radius: 10px;
+
+        }
+        #phython:hover{
+            background-color:rgb(182, 45, 201);
+            border: 2px solid black;
+            border-radius: 10px;
+
+        }
+        
+        #female{
+            background-color:silver;
+            border: 2px solid black;
+            border-radius: 10px;
+
+        }
+        #female:hover{
+            background-color:rgb(182, 45, 201);
+            border: 2px solid black;
+            border-radius: 10px;
+
+        }
+        #male{
+           background-color:silver;
+            border: 2px solid black;
+            border-radius: 10px;
+
+        }
+        #male:hover{
+            background-color:rgb(182, 45, 201);
+            border: 2px solid black;
+            border-radius: 10px;
+
+        }
+        #all{
+           background-color:silver;
+            border: 2px solid black;
+            border-radius: 10px;
+
+        }
+        #all:hover{
+            background-color:rgb(182, 45, 201);
+            border: 2px solid black;
+            border-radius: 10px;
+
+        }
+        thead tr{
+    background-color: black;
+    color:orange;
+}
+tbody tr:hover{
+    cursor:pointer;
+    background-color: gray;
+    color:orange;
+
+}
+table {
+         text-align: center;
+         width: 100%;
+         border-collapse: collapse;
+      }
+      th, td {
+
+         border: 1px solid black;
+         padding: 8px;
+      }
+
+    </style>
+</head>
+<body>
+    <div id="headline">
+        <h1>Student Record</h1>
+    </div>
+    <div>
+        <button id="all">ALL STUDENTS DETAILS</button>
+        <button id="male"> MALE </button>
+        <button id="female">FEMALE</button>
+        <button id="mern"> MERN </button>
+        <button id="java"> JAVA </button>
+        <button id="phython"> PHYTHON </button>
+        
+        
+    </div>
+   
+    <table id="details">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Course</th>
+            </tr>
+        </thead>
+        <tbody id="body">
+
+        </tbody>
+            
+        
+        
+    </table>
+    <script>
+         let students =[{
+            Name:"Bhogeshwar rao",
+            age:25,
+            Gender:"Male",
+            course:"MERN"
+        },
+        {
+            Name:"Maheshwar rao",
+            age:22,
+            Gender:"Male",
+            course:"JAVA"
+        },{
+            Name:"Kameshwar rao",
+            age:21,
+            Gender:"Male",
+            course:"PHYTHON"
+        },{
+            Name:"Rama Devi",
+            age:24,
+            Gender:"Female",
+            course:"MERN"
+        },{
+            Name:"Rajini Usha",
+            age:17,
+            Gender:"Female",
+            course:"JAVA"
+        },{
+            Name:"sunil Naik",
+            age:35,
+            Gender:"Male",
+            course:"PHYTHON"
+        },{
+            Name:"Mahidhar sanu",
+            age:19,
+            Gender:"Male",
+            course:"MERN"
+            
+        },{
+            Name:"Soumya Singh",
+            age:20,
+            Gender:"Female",
+            course:"JAVA"
+        },{
+            Name:"Prasanthi Rao",
+            age:28,
+            Gender:"Female",
+            course:"PHYTHON"
+        },{
+            Name:"Roja Das",
+            age:30,
+            Gender:"Female",
+            course:"MERN"   
+        },
+    ]
+    let allStudentsDetails = document.querySelector('#all');
+    let body = document.querySelector("#body")
+
+    allStudentsDetails.addEventListener("click",()=> {
+        let stu = "<tr>"
+            students.map(items => {
+                for(let key in items){
+                    stu+=`<td>${items[key]}</td>`
+                    
+                }
+                stu+="</tr>"
+                body.innerHTML = stu
+})});
+            let male =document.querySelector("#male")
+            male.addEventListener("click",()=>{
+                let mal = "<tr>";
+                students.filter((item) => {
+                    if(item.Gender == "Male"){
+                        for(let key in item){
+                            mal+=`<td>${item[key]}</td>`
+                        }
+                        mal+="</tr>"
+                    body.innerHTML = mal
+                        
+                    }
+})});
+                let female = document.querySelector("#female")
+                female.addEventListener("click",()=>{
+                    female="<tr>"
+                    students.filter((item) => {
+                        if(item.Gender == "Female"){
+                            for(let key in item){
+                                female+=`<td>${item[key]}</td>`
+                            }
+                            female+="</tr>"
+                            body.innerHTML = female
+                        }
+})})
+                let mern = document.querySelector("#mern").addEventListener("click",()=>{
+                    let mern ="<tr>";
+                        students.filter((items) => {
+                            if(items.course == "MERN"){
+                                for(let key in items){
+                                    mern+=`<td>${items[key]}</td>`
+                                }
+                                mern += "</tr>"
+                                body.innerHTML = mern
+                                
+
+                            }
+                        })
+                });
+                let java = document.querySelector("#java").addEventListener("click",()=>{
+                    let java ="<tr>";
+                        students.filter((items) => {
+                            if(items.course == "JAVA"){
+                                for(let key in items){
+                                    java+=`<td>${items[key]}</td>`
+                                }
+                                java += "</tr>"
+                                body.innerHTML = java;
+                            }
+                        })
+                })
+                let PHYTHON = document.querySelector("#phython").addEventListener("click",()=>{
+                    let PHYTHON ="<tr>";
+                        students.filter((items) => {
+                            if(items.course == "PHYTHON"){
+                                for(let key in items){
+                                    PHYTHON+=`<td>${items[key]}</td>`
+                                }
+                                PHYTHON += "</tr>"
+                                body.innerHTML = PHYTHON;
+                            }
+                        })
+                })
+
+                function deteteTask (index){
+                    tasklist
+                }
+
+    
+    
+    </script>
+</body>
+</html> -->

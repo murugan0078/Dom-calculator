@@ -1,0 +1,62 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        .container{
+            height: 55px;
+            width: 229px;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin: 100px auto;
+            padding: 20px;
+        }
+        #containerTwo{
+            height:300px;
+            width: 50%;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin: 100px auto;
+            padding: 20px;
+            display: none;
+        }
+        #labelText{
+            display: block;
+        }
+        #inputText{
+            margin: 10px 0;
+        }
+        #buttonSubmit{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="inputText" id="labelText">Enter Your Task</label>
+        <input type="text" id="inputText">
+        <button id="buttonSubmit">submit</button>
+    </div>
+    <div id="containerTwo">
+     
+    </div>
+    <script>
+        let inputValues = [];
+        let inputT = document.getElementById("inputText");
+        let buttonS = document.getElementById("buttonSubmit");
+        let containerT = document.getElementById("containerTwo");
+        buttonS.addEventListener("click",()=>{
+            containerT.style.display="block";
+            inputValues.push(inputT.value);
+            let taskList = '';
+            inputValues.forEach(element => {
+                taskList += `<li>${element}</li>`;
+            });
+            containerT.innerHTML = `<ul>${taskList}</ul>`;
+        })
+    </script>
+</body>
+</html> -->
